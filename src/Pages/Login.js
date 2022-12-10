@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 import api from "../services/api";
 
 
 function Login() {
+
+const navigate = useNavigate()
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,7 +23,7 @@ function Login() {
 		if (data.finduser) {
 			localStorage.setItem('token', data.finduser)
 			alert('Login successful')
-			window.location.href = '/private'
+			navigate("/private")
 		} else {
 			alert('Please check your username and password')
 		}
@@ -59,11 +62,11 @@ function Login() {
                 />
               </div>
               <div class="col-12">
-                <NavLink to="/private">
+        
                 <button type="submit" class="btn btn-primary">
                   Entre
                 </button>
-                </NavLink>
+
               </div>
             </form>
           </div>
