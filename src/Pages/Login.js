@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import api from "../services/api";
 
 
@@ -58,9 +59,11 @@ function Login() {
                 />
               </div>
               <div class="col-12">
+                <NavLink to="/private">
                 <button type="submit" class="btn btn-primary">
                   Entre
                 </button>
+                </NavLink>
               </div>
             </form>
           </div>
