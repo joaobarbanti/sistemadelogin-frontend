@@ -19,7 +19,7 @@ function Login() {
 		if (data.finduser) {
 			localStorage.setItem('token', data.finduser)
 			alert('Login successful')
-			window.location.href = '/Private'
+			window.location.href = '/private'
 		} else {
 			alert('Please check your username and password')
 		}
